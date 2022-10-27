@@ -7,13 +7,12 @@ counter = 0
 
 facts = 'cool beautiful awesome perfect lovely breathtaking gorgeous hot'
 tripod_options = ['Tripod fact of the day', 'Tripod picture of the day',
-				  'Tripod poem of the day', 'Tripod lover of the day', 'I don\'t like tripods']
+				  'Tripod poem of the day', 'I don\'t like tripods']
 
 poems = ["Roses are red\nViolets are blue\nTripods are my life\nMy love for them is true",
 		 "A tripod a day\nKeeps the doctor away",
 		 "Twinkle, twinkle, little star\nI will figure what you are\nWith a tripod that's so high\nIt will reach you in the sky",
-		 "Yesterday\nAll my tripods seemed so far away\nNow I have them all with me to stay\nBecause I got a tripod case",
-		 "È mercoledì\nHo un treppiedi\nSono a Cesena"]
+		 "Yesterday\nAll my tripods seemed so far away\nNow I have them all with me to stay\nBecause I got a tripod case"]
 
 
 @bot.message_handler(commands=['start'])
@@ -34,9 +33,6 @@ def reply(message):
 		bot.send_message(cid, f'Tripods are {facts.split()[cycle % 8]}!')
 	elif message.text == 'Tripod picture of the day':
 		photo = open(os.path.join('pics', f'{cycle}.jpg', ), 'rb')
-		bot.send_photo(cid, photo)
-	elif message.text == 'Tripod lover of the day':
-		photo = open(os.path.join('pics', f'Aldo{cycle % 4}.jpeg'), 'rb')
 		bot.send_photo(cid, photo)
 	elif message.text == 'Tripod poem of the day':
 		bot.send_message(cid, poems[cycle % 5])
