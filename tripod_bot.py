@@ -1,7 +1,7 @@
 import os, time
 from telebot import TeleBot, types
 
-token = '1945603676:AAFMynOpoE4_SDz1dvXfIRcqg-5Bxfcl1Ag'
+token = 'secret key'
 bot = TeleBot(token)
 counter = 0
 
